@@ -15,13 +15,14 @@ public class BowlingGame {
         for (int frameIndex = 0; frameIndex < 10; frameIndex++) {
             if (isStrike(rollIndex)) {
                 score += calculateStrikeScore(rollIndex);
+                rollIndex++;
             } else if (isSpare(rollIndex)) {
                 score += calculateSpareScore(rollIndex);
+                rollIndex += 2;
             } else  {
                 score += calculateOpenFrameScore(rollIndex);
+                rollIndex += 2;
             }
-
-            rollIndex += 2;
         }
         return score;
     }
