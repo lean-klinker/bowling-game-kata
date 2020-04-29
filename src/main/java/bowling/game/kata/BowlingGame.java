@@ -14,6 +14,7 @@ public class BowlingGame {
         int rollIndex = 0;
         for (int frameIndex = 0; frameIndex < 10; frameIndex++) {
             score += rolls[rollIndex] + rolls[rollIndex + 1];
+            rollIndex += 2;
         }
         return score;
     }
