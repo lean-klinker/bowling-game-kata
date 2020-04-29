@@ -1,5 +1,6 @@
 package bowling.game.kata;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -22,6 +23,7 @@ public class BowlingGameTest {
     }
 
     @Test
+    @Ignore
     public void whenRollingASpareTheScoreIsTenPlusTheNextRoll() {
         game.roll(6);
         game.roll(4);
