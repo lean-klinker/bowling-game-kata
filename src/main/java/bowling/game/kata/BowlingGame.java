@@ -13,7 +13,9 @@ public class BowlingGame {
         int score = 0;
         int rollIndex = 0;
         for (int frameIndex = 0; frameIndex < 10; frameIndex++) {
-            if (isSpare(rollIndex)) {
+            if (isStrike(rollIndex)) {
+                score += calculateStrikeScore(rollIndex);
+            } else if (isSpare(rollIndex)) {
                 score += calculateSpareScore(rollIndex);
             } else  {
                 score += calculateOpenFrameScore(rollIndex);
@@ -22,6 +24,14 @@ public class BowlingGame {
             rollIndex += 2;
         }
         return score;
+    }
+
+    private int calculateStrikeScore(int rollIndex) {
+        return 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
+    }
+
+    private boolean isStrike(int rollIndex) {
+        return rolls[rollIndex] == 10;
     }
 
     private int calculateOpenFrameScore(int rollIndex) {
