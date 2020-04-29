@@ -13,7 +13,12 @@ public class BowlingGame {
         int score = 0;
         int rollIndex = 0;
         for (int frameIndex = 0; frameIndex < 10; frameIndex++) {
-            score += rolls[rollIndex] + rolls[rollIndex + 1];
+            if (rolls[rollIndex] + rolls[rollIndex + 1] == 10) {
+                score += 10 + rolls[rollIndex + 2];
+            } else  {
+                score += rolls[rollIndex] + rolls[rollIndex + 1];
+            }
+
             rollIndex += 2;
         }
         return score;
