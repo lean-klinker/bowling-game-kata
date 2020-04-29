@@ -11,8 +11,9 @@ public class BowlingGame {
 
     public int score() {
         int score = 0;
-        for (int i = 0; i < 21; i++) {
-            score += rolls[i];
+        int rollIndex = 0;
+        for (int frameIndex = 0; frameIndex < 10; frameIndex++) {
+            score += rolls[rollIndex] + rolls[rollIndex + 1];
         }
         return score;
     }
