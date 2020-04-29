@@ -23,7 +23,6 @@ public class BowlingGameTest {
     }
 
     @Test
-    @Ignore
     public void whenRollingASpareTheScoreIsTenPlusTheNextRoll() {
         game.roll(6);
         game.roll(4);
